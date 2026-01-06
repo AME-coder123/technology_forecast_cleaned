@@ -60,12 +60,49 @@ $(document).ready(function() {
     });
 });
 </script>
+
+
+<head>
+<style>
+  .corner-logo {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    z-index: 9999;
+  }
+
+  .corner-logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+  }
+</style>
 </head>
+
+
 <body>
+  
+<div class="corner-logo">
+  <img src="file:///C|/Users/gdlalflu/Downloads/Technology_Forecast_HTML_Package (2)/flex-logo-blue.png">
+</div>
+	
+	
+	
+	
 <div class="title-row">
 
-<div class="title-text">AME-PPQ Technology Forecast: 2023–2030</div>
+
+   <div class="title-text">AME-PPQ Technology Forecast: 2023–2030</div>
 </div>
+
+<style>
+.title-text {
+    text-align: center;
+    width: 100%;   /* Importante si el contenedor no ocupa todo el ancho */
+    display: block;
+}
+</style>
+
 <div class="search-bar">
 <input onkeyup="globalSearch(this)" placeholder="Search categories..." type="text"/>
 </div>
