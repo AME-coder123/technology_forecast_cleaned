@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AME-PPQ Technology Forecast</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet"/>
@@ -81,12 +82,10 @@ $(document).ready(function() {
 
 
 <body>
-	
- <div class="corner-logo">
+  
+<div class="corner-logo">
   <img src="flex-logo-blue.png">
 </div>
-	
-	
 	
 	
 <div class="title-row">
@@ -97,12 +96,13 @@ $(document).ready(function() {
 
 <style>
 .title-text {
-    text-align: center;
+    text-align: center;  
     width: 100%;   /* Importante si el contenedor no ocupa todo el ancho */
     display: block;
 }
 </style>
 
+	
 <style>
 .search-bar {
      
@@ -126,40 +126,53 @@ $(document).ready(function() {
 <div class="search-bar">
 <input onkeyup="globalSearch(this)" placeholder="Search categories..." type="text"/>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Soldering Materials -->
 <div class="card-header" onclick="toggleCardContent(this)">Soldering Materials</div>
 <div class="card-content">
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>SMT</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td></tr>
 <tr><td>Wave</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td></tr>
+<tr><td>Sintering under pressure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Hybrid sintering</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Pressure-free sintering</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Sintering</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td></tr>
 <tr><td>Vacuum Reflow</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>N2 </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Vapor Phase</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+
 <tr><td>Formic Acid (Fluxless)</td><td>N</td><td>N</td><td>N</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Halogen Free Flux (SMT)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Halogen Free Flux (Wave)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Solder Spheres Cu core</td><td>N</td><td>N</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Adhesives -->
 <div class="card-header" onclick="toggleCardContent(this)">Adhesives</div>
 <div class="card-content">
-<table class="display">
+<table class="display"> <!-- Hold en espera -->
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>UV Cure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Heat Cure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>RTV</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
 </tbody></table>
 </div>
 </div>
-<div class="card">
-<div class="card-header" onclick="toggleCardContent(this)">Conformal Coatings</div>
+	
+	
+	
+
+<div class="card"> <!-- Tabla Conformal Coatings -->
+<div class="card-header" onclick="toggleCardContent(this)">Conformal Coatings</div> <!-- completed -->
 <div class="card-content">
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
@@ -170,23 +183,26 @@ $(document).ready(function() {
 <tr><td>Epoxy</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Parylene </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Hybrids</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Components -->
 <div class="card-header" onclick="toggleCardContent(this)">Passive Components</div>
 <div class="card-content">
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Smallest Passives</td><td>M0201 (008004)</td><td>M0201 (008004)</td><td>M0201 (008004)</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Active Components -->
 <div class="card-header" onclick="toggleCardContent(this)">Active Components</div>
 <div class="card-content">
 <table class="display">
@@ -198,37 +214,43 @@ $(document).ready(function() {
 <tr><td>SMT VPM double side (under  ASIC)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>CPC (Copper Flyover)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Advanced substrate technologies </td><td>N</td><td>N</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Optic Components -->
 <div class="card-header" onclick="toggleCardContent(this)">Optic Components</div>
 <div class="card-content">
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Fiber Optics</td><td>Circuit Pack Level</td><td>Circuit Pack Level</td><td>Circuit Pack Level</td><td>Co-packaged optics</td><td>Co-packaged optics</td><td>Co-packaged optics</td><td>Co-packaged optics</td><td>Co-packaged optics</td></tr>
 <tr><td>CPO (Copackaged Optics)</td><td>N</td><td>N</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+	
+<div class="card"> <!-- Tabla Connectors completed -->
 <div class="card-header" onclick="toggleCardContent(this)">Connectors</div>
 <div class="card-content">
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
+<tr><td>OverPass/UltraPass Interconnections  </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>	
 <tr><td>Pressfit with Compression Contacts. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Paladin Connector - Press-fit. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Belly to Belly Connector. SMT. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Impulse Connector.</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla PCB -->
 <div class="card-header" onclick="toggleCardContent(this)">PCB</div>
 <div class="card-content">
 <table class="display">
@@ -249,12 +271,14 @@ $(document).ready(function() {
 <tr><td>PCB Size (mm)</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td></tr>
 <tr><td>Thickness (mm)</td><td>&lt;6.5</td><td>6.5</td><td>6.5</td><td>6.6</td><td>6.7</td><td>6.8</td><td>6.9</td><td>7</td></tr>
 <tr><td>PCB Layers. </td><td>20-30</td><td>30-35</td><td>35-40</td><td>40-50</td><td>50-60</td><td>50-60</td><td>70</td><td>70</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+	
+<div class="card"> <!-- Tabla Other Process -->
 <div class="card-header" onclick="toggleCardContent(this)">Other Process</div>
 <div class="card-content">
 <table class="display">
@@ -277,11 +301,14 @@ $(document).ready(function() {
 </tbody></table>
 </div>
 </div>
-<div class="footer">
+	
+	
+	
+	
+<div class="footer"> <!-- Creditos -->
 <p>Contact: <a href="mailto:ivan.pelayo@flex.com">ivan.pelayo@flex.com</a></p>
-<p>Last Updated: October 15, 2025</p>
+<p>Last Updated: January 16, 2026</p>
 </div>
 </body>
+</head>
 </html>
-
-
