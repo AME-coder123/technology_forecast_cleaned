@@ -29,7 +29,7 @@ tr:nth-child(even) td { background-color: #ffffff; }
 .title-text { font-size: 1.5em; font-weight: bold; }
 .card { background-color: white; box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.1); border-radius: 0.5em; margin-bottom: 2em; overflow: hidden; }
 .card-header { background-color: #d9e1f2; font-weight: bold; padding: 0.75em; border-radius: 0.5em 0.5em 0 0; cursor: pointer; font-size: 1.1em; }
-.card-content { padding: 0 1em; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.3s ease-out; font-size: 0.95em; }
+.card-content { padding: 0 1em; max-height: 0; overflow: hidlden; transition: max-height 0.5s ease-out, padding 0.3s ease-out; font-size: 0.95em; }
 .card-content.open { padding: 1em; max-height: 2000px; transition: max-height 0.5s ease-in, padding 0.3s ease-in; }
 .footer { background-color: #003366; color: white; text-align: center; padding: 1em; margin-top: 2em; font-size: 0.9em; }
 .footer a { color: #aadfff; text-decoration: underline; }
@@ -213,7 +213,7 @@ $(document).ready(function() {
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Finest Pitch.</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.05mm</td><td>0.05mm</td><td>0.05mm</td><td>0.05mm</td><td>0.05mm</td></tr>
-<tr><td>Largest size</td><td>100x100mm</td><td>100x100mm</td><td>150x150mm</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Largest size</td><td>100x100mm</td><td>100x100mm</td><td>150x150mm</td><td>160x160mm</td><td>180x180mm</td><td>200x200mm</td><td></td><td></td></tr>
 <tr><td>Weight.</td><td>100g</td><td>300g</td><td>500g</td><td>500g</td><td>500g</td><td>500g</td><td>500g</td><td>500g</td></tr>
 <tr><td>Component spacing</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td></tr>
 <tr><td>SMT VPM double side (under  ASIC)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
@@ -247,9 +247,10 @@ $(document).ready(function() {
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>OverPass/UltraPass Interconnections  </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>	
-<tr><td>Pressfit with Compression Contacts. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td>Paladin Connector - Press-fit. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td>Belly to Belly Connector. SMT. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Highest </td><td>15mm&nbsp;</td><td>15mm&nbsp;</td><td>20mm&nbsp;</td><td>30mm&nbsp;&nbsp;</td><td>35mm&nbsp;</td><td>35mm&nbsp;</td><td>35mm&nbsp;</td><td>35mm&nbsp;</td></tr>
+<tr><td>Pressfit with Compression Contacts </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Paladin Connector - Press-fit </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Belly to Belly Connector SMT </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Impulse Connector.</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 </tbody></table>
 </div>
@@ -277,7 +278,7 @@ $(document).ready(function() {
 <tr><td>Backdrill. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>surface finish</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td></tr>
 <tr><td>PCB Size (mm)</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td></tr>
-<tr><td>Thickness (mm)</td><td>&lt;6.5</td><td>6.5</td><td>6.5</td><td>6.6</td><td>6.7</td><td>6.8</td><td>6.9</td><td>7</td></tr>
+<tr><td>Thickness (mm)</td><td>&lt;6.5</td><td>6.5</td><td>6.5</td><td>6.6</td><td>7</td><td>8</td><td>8.5&nbsp;</td><td>9&nbsp;</td></tr>
 <tr><td>PCB Layers. </td><td>20-30</td><td>30-35</td><td>35-40</td><td>40-50</td><td>50-60</td><td>50-60</td><td>70</td><td>70</td></tr>
 </tbody></table>
 </div>
@@ -322,4 +323,3 @@ $(document).ready(function() {
 </body>
 </head>
 </html>
-
