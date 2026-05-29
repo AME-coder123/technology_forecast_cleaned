@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AME-PPQ Technology Forecast</title>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet"/>
@@ -28,7 +29,7 @@ tr:nth-child(even) td { background-color: #ffffff; }
 .title-text { font-size: 1.5em; font-weight: bold; }
 .card { background-color: white; box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.1); border-radius: 0.5em; margin-bottom: 2em; overflow: hidden; }
 .card-header { background-color: #d9e1f2; font-weight: bold; padding: 0.75em; border-radius: 0.5em 0.5em 0 0; cursor: pointer; font-size: 1.1em; }
-.card-content { padding: 0 1em; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.3s ease-out; font-size: 0.95em; }
+.card-content { padding: 0 1em; max-height: 0; overflow: hidlden; transition: max-height 0.5s ease-out, padding 0.3s ease-out; font-size: 0.95em; }
 .card-content.open { padding: 1em; max-height: 2000px; transition: max-height 0.5s ease-in, padding 0.3s ease-in; }
 .footer { background-color: #003366; color: white; text-align: center; padding: 1em; margin-top: 2em; font-size: 0.9em; }
 .footer a { color: #aadfff; text-decoration: underline; }
@@ -87,8 +88,6 @@ $(document).ready(function() {
 </div>
 	
 	
-	
-	
 <div class="title-row">
 
 
@@ -97,50 +96,87 @@ $(document).ready(function() {
 
 <style>
 .title-text {
-    text-align: center;
+    text-align: center;  
     width: 100%;   /* Importante si el contenedor no ocupa todo el ancho */
     display: block;
+}
+</style>
+
+	
+<style>
+.search-bar {
+     
+}
+
+.search-bar input {
+  width: 98.1%;            /* el input toma todo el contenedor */
+  height: 38px;           /* alto fijo */
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+.search-bar input:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 4px #0078d4;
 }
 </style>
 
 <div class="search-bar">
 <input onkeyup="globalSearch(this)" placeholder="Search categories..." type="text"/>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Soldering Materials -->
 <div class="card-header" onclick="toggleCardContent(this)">Soldering Materials</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>SMT</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td></tr>
 <tr><td>Wave</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td></tr>
+<tr><td>Sintering under pressure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Hybrid sintering</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Pressure-free sintering</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Sintering</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td><td>Nano-Cu, Nano-Ag</td></tr>
 <tr><td>Vacuum Reflow</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>N2 </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Vapor Phase</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+
 <tr><td>Formic Acid (Fluxless)</td><td>N</td><td>N</td><td>N</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Halogen Free Flux (SMT)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Halogen Free Flux (Wave)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Solder Spheres Cu core</td><td>N</td><td>N</td><td>N</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Adhesives -->
 <div class="card-header" onclick="toggleCardContent(this)">Adhesives</div>
 <div class="card-content">
-<table class="display">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
+<table class="display"> <!-- Hold en espera -->
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>UV Cure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Heat Cure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>RTV</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
 </tbody></table>
 </div>
 </div>
-<div class="card">
-<div class="card-header" onclick="toggleCardContent(this)">Conformal Coatings</div>
+	
+	
+	
+
+<div class="card"> <!-- Tabla Conformal Coatings -->
+<div class="card-header" onclick="toggleCardContent(this)">Conformal Coatings</div> <!-- completed -->
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Nano-Coating</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
@@ -150,67 +186,82 @@ $(document).ready(function() {
 <tr><td>Epoxy</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Parylene </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Hybrids</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Components -->
 <div class="card-header" onclick="toggleCardContent(this)">Passive Components</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Smallest Passives</td><td>M0201 (008004)</td><td>M0201 (008004)</td><td>M0201 (008004)</td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Active Components -->
 <div class="card-header" onclick="toggleCardContent(this)">Active Components</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Finest Pitch.</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.05mm</td><td>0.05mm</td><td>0.05mm</td><td>0.05mm</td><td>0.05mm</td></tr>
-<tr><td>Largest size</td><td>100x100mm</td><td>100x100mm</td><td>150x150mm</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Largest size</td><td>100x100mm</td><td>100x100mm</td><td>150x150mm</td><td>160x160mm</td><td>180x180mm</td><td>200x200mm</td><td></td><td></td></tr>
 <tr><td>Weight.</td><td>100g</td><td>300g</td><td>500g</td><td>500g</td><td>500g</td><td>500g</td><td>500g</td><td>500g</td></tr>
 <tr><td>Component spacing</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td><td>0.75mm</td></tr>
 <tr><td>SMT VPM double side (under  ASIC)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>CPC (Copper Flyover)</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Advanced substrate technologies </td><td>N</td><td>N</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td><td>Glass-Core Substrates</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla Optic Components -->
 <div class="card-header" onclick="toggleCardContent(this)">Optic Components</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Fiber Optics</td><td>Circuit Pack Level</td><td>Circuit Pack Level</td><td>Circuit Pack Level</td><td>Co-packaged optics</td><td>Co-packaged optics</td><td>Co-packaged optics</td><td>Co-packaged optics</td><td>Co-packaged optics</td></tr>
 <tr><td>CPO (Copackaged Optics)</td><td>N</td><td>N</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+	
+<div class="card"> <!-- Tabla Connectors completed -->
 <div class="card-header" onclick="toggleCardContent(this)">Connectors</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
-<tr><td>Pressfit with Compression Contacts. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td>Paladin Connector - Press-fit. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td>Belly to Belly Connector. SMT. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>OverPass/UltraPass Interconnections  </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>	
+<tr><td>Highest </td><td>15mm&nbsp;</td><td>15mm&nbsp;</td><td>20mm&nbsp;</td><td>30mm&nbsp;&nbsp;</td><td>35mm&nbsp;</td><td>35mm&nbsp;</td><td>35mm&nbsp;</td><td>35mm&nbsp;</td></tr>
+<tr><td>Pressfit with Compression Contacts </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Paladin Connector - Press-fit </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
+<tr><td>Belly to Belly Connector SMT </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>Impulse Connector.</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+<div class="card"> <!-- Tabla PCB -->
 <div class="card-header" onclick="toggleCardContent(this)">PCB</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>Hybrid PCB</td><td>N</td><td>N</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
@@ -227,16 +278,19 @@ $(document).ready(function() {
 <tr><td>Backdrill. </td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
 <tr><td>surface finish</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td><td>ENIG, ENEPIG, OSP. I-Sn, I-Ag</td></tr>
 <tr><td>PCB Size (mm)</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td><td>610x610</td></tr>
-<tr><td>Thickness (mm)</td><td>&lt;6.5</td><td>6.5</td><td>6.5</td><td>6.6</td><td>6.7</td><td>6.8</td><td>6.9</td><td>7</td></tr>
+<tr><td>Thickness (mm)</td><td>&lt;6.5</td><td>6.5</td><td>6.5</td><td>6.6</td><td>7</td><td>8</td><td>8.5&nbsp;</td><td>9&nbsp;</td></tr>
 <tr><td>PCB Layers. </td><td>20-30</td><td>30-35</td><td>35-40</td><td>40-50</td><td>50-60</td><td>50-60</td><td>70</td><td>70</td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 </div>
 </div>
-<div class="card">
+	
+	
+	
+	
+<div class="card"> <!-- Tabla Other Process -->
 <div class="card-header" onclick="toggleCardContent(this)">Other Process</div>
 <div class="card-content">
+<td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
 <thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>3-D Assembly</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -257,10 +311,15 @@ $(document).ready(function() {
 </tbody></table>
 </div>
 </div>
-<div class="footer">
+	
+	
+	
+	
+<div class="footer"> <!-- Creditos -->
 <p>Contact: <a href="mailto:ivan.pelayo@flex.com">ivan.pelayo@flex.com</a></p>
-<p>Last Updated: October 15, 2025</p>
+<p>Contact: <a href="mailto:ivan.pelayo@flex.com">miguel.sierra@flex.com</a></p>
+<p>Last Updated: January 20, 2026</p>
 </div>
 </body>
+</head>
 </html>
-
