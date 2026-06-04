@@ -18,24 +18,63 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <style>
-body { font-family: Arial, sans-serif; margin: 0; padding: 2em; background-color: #f4f4f4; font-size: 1em; }
+body { font-family: "Century Gothic", sans-serif; margin: 0; padding: 2em; background-color: #F4F4F4; font-size: 1em; }
 table { border-collapse: collapse; width: 100%; font-size: 0.9em; }
 th { background-color: #e6f2ff; padding: 0.5em; text-align: center; }
 td { padding: 0.5em; text-align: center; }
+td:contains("Y") {color: green;font-weight: bold;}
+td:contains("N") {color: red;}
+table th, table td {text-align: center;}
 tr:nth-child(odd) td { background-color: #e6f2ff; }
 tr:nth-child(even) td { background-color: #ffffff; }
-.title-row { background-color: #003366; color: white; padding: 1em; display: flex; align-items: center; }
+.title-row { background-color: #003366; color: white0; padding: 1em; display: flex; align-items: center; }
 .title-row img { height: 2.5em; margin-right: 1em; }
 .title-text { font-size: 1.5em; font-weight: bold; }
-.card { background-color: white; box-shadow: 0 0.125em 0.5em rgba(0,0,0,0.1); border-radius: 0.5em; margin-bottom: 2em; overflow: hidden; }
-.card-header { background-color: #d9e1f2; font-weight: bold; padding: 0.75em; border-radius: 0.5em 0.5em 0 0; cursor: pointer; font-size: 1.1em; }
-.card-content { padding: 0 1em; max-height: 0; overflow: hidlden; transition: max-height 0.5s ease-out, padding 0.3s ease-out; font-size: 0.95em; }
+.card { background-color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-radius: 0.5em; margin-bottom: 2em; overflow: hidden;}
+.card-header { background-color: #aeb7c6;  transition: 0.3s; font-weight: bold; padding: 10px; border-radius: 0.5em 0.5em 0 0; cursor: pointer; font-size: 1.2em; color: black;}
+.card-content { padding: 0 1em; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out, padding 0.3s ease-out; font-size: 0.95em; }
 .card-content.open { padding: 1em; max-height: 2000px; transition: max-height 0.5s ease-in, padding 0.3s ease-in; }
 .footer { background-color: #003366; color: white; text-align: center; padding: 1em; margin-top: 2em; font-size: 0.9em; }
 .footer a { color: #aadfff; text-decoration: underline; }
 .search-bar { margin-bottom: 1em; }
 .search-bar input { width: 100%; padding: 0.5em; font-size: 1em; }
+	
+table.dataTable tbody tr:hover {
+  background-color: #e6f2ff;
+}
+
+/* FORZAR centrado en DataTables */
+table.dataTable thead th {
+  text-align: center !important;
+}
+
+table.dataTable tbody td {
+  text-align: center;
+}
+	
+/* Botones DataTables */
+
+.dt-button {
+  background-color: #f3f3f3 !important;
+  color: #333 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 8px;
+  padding: 6px 14px;
+  transition: 0.3s;
+}
+
+.dt-button:hover {
+  background-color: #0078d4 !important;
+  color: white !important;
+  border-color: #0078d4 !important;
+}
+
+
+
 </style>
+
+	
+	
 <script>
 function toggleCardContent(header) {
     const content = header.nextElementSibling;
@@ -52,11 +91,21 @@ function globalSearch(input) {
 $(document).ready(function() {
     $('table.display').each(function() {
         $(this).DataTable({
-            paging: false,
-            searching: false,
+            paging: true,
+			pageLength: 5,
+            searching: true,
             info: false,
             dom: 'Bfrtip',
-            buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+			ordering: true,
+            buttons: [
+				'copy', 'csv', 'excel', 'pdf', 'print',
+				  {
+					text: 'Clear',
+					action: function (e, dt, node, config) {
+					  dt.search('').draw();
+					}
+				  }
+				]
         });
     });
 });
@@ -134,7 +183,7 @@ $(document).ready(function() {
 <div class="card-content">
 <td>Note: Y = It is used from this year onwards &nbsp;|&nbsp; N = It has not been used</td>
 <table class="display">
-<thead><tr><th></th><th>2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
+<thead><tr><th></th><th> 2023</th><th>2024</th><th>2025</th><th>2026</th><th>2027</th><th>2028</th><th>2029</th><th>2030</th></tr></thead><tbody>
 <tr><td>SMT</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td><td>SAC305, LTS, Durafuse, SACQ</td></tr>
 <tr><td>Wave</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td><td>SN100C, SAC305</td></tr>
 <tr><td>Sintering under pressure</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr>
